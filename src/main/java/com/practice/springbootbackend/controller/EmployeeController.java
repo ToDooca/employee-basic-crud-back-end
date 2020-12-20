@@ -56,6 +56,7 @@ public class EmployeeController {
 
     //delete employee rest api
     @DeleteMapping("/employees/{id}")
+    @CrossOrigin
     public void deleteEmployee(@PathVariable Long id){
         Employee employee = employeeRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFountException("Employee with id: " + id + "does not exist"));
